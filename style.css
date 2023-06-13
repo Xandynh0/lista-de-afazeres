@@ -1,0 +1,34 @@
+
+  h1 {
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    flex-grow: 1;
+    padding: 5px;
+  }
+  
+  button {
+    margin-left: 10px;
+  }
+  
+  li.completed {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+  .container {
+      width: 100%;
+      max-width: none;
+      padding: 0;
+    }
+
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }

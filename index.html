@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <style>
+    .container {
+      width: 100%;
+      max-width: none;
+      padding: 0;
+    }
+
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+      .completed {
+  text-decoration: line-through;
+}
+
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-4">Lista de Tarefas</h1>
+    <div class="row">
+      <div class="col-md-6 mt-4">
+        <form id="task-form">
+          <div class="mb-3">
+            <label for="task-input" class="form-label">Tarefa</label>
+            <input type="text" class="form-control" id="task-input" placeholder="Adicionar tarefa...">
+          </div>
+          <div class="mb-3">
+            <label for="priority-select" class="form-label">Prioridade</label>
+            <select id="priority-select" class="form-select">
+              <option value="alta">Alta</option>
+              <option value="média">Média</option>
+              <option value="baixa">Baixa</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="due-date-input" class="form-label">Data de Vencimento</label>
+            <input type="date" class="form-control" id="due-date-input">
+          </div>
+          <div class="mb-3">
+            <label for="description-input" class="form-label">Descrição</label>
+            <textarea class="form-control" id="description-input" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Adicionar</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Tarefa</th>
+              <th scope="col">Prioridade</th>
+              <th scope="col">Data de Vencimento</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody id="task-list"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="task-toast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <strong class="me-auto">Descrição da Tarefa</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        <p id="task-description"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
